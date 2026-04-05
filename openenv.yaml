@@ -1,0 +1,21 @@
+name: ai-safety-env
+version: 1.0.0
+description: >
+  A context-aware AI safety environment where an agent
+  detects hate speech and prompt injection attacks in
+  chat comments using video and conversation context.
+author: your-team-name
+tasks:
+  - id: easy
+    description: Detect obvious hate speech and clear prompt injections
+    difficulty: easy
+  - id: medium
+    description: Detect context-dependent harassment and disguised injections
+    difficulty: medium
+  - id: hard
+    description: Detect coordinated attacks and deeply hidden injections
+    difficulty: hard
+api:
+  reset: /reset
+  step: /step
+  state: /state
