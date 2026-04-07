@@ -40,3 +40,24 @@ class AISafetyEnv:
 
     def state(self):
         return self.current_scenario
+    
+
+from fastapi import FastAPI
+
+app = FastAPI()
+env_instance = AISafetyEnv()
+
+@app.post("/reset")
+def reset(difficulty: str = "easy"):
+    env_instance.difficulty = difficulty
+    obs = env_instance.reset()
+    return obs.dict()
+
+@app.post("/step")
+def step(action: Action):
+    score, done, info = env_instance.step(action)
+    return {"score": score, "done": done, "info": info}
+
+@app.get("/state")
+def state():
+    return env_instance.state()
