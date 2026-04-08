@@ -1,0 +1,17 @@
+[project]
+name = "vigilenv"
+version = "1.0.0"
+description = "Context-aware hate speech and prompt injection detector"
+requires-python = ">=3.10"
+dependencies = [
+    "openenv-core",
+    "openai",
+    "pydantic",
+    "fastapi",
+    "uvicorn",
+    "pandas"
+]
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends.legacy:build"
